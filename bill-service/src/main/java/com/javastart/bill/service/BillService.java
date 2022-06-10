@@ -4,12 +4,12 @@ package com.javastart.bill.service;
 import com.javastart.bill.entity.Bill;
 import com.javastart.bill.exception.BillNotFoundException;
 import com.javastart.bill.repository.BillRepository;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @Service
 public class BillService {
@@ -44,11 +44,13 @@ public class BillService {
         return billRepository.save(bill);
     }
 
-    public Bill deleteBill(Long billId){
+    public Bill deleteBill(Long billId) {
         Bill deleteBill = getBillById(billId);
         billRepository.deleteById(billId);
         return deleteBill;
     }
 
-
+    public List<Bill> getBillsByAccountId(Long accountId) {
+        return billRepository.getBillByAccountId(accountId);
+    }
 }
