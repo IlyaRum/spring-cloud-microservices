@@ -1,16 +1,25 @@
+#spring:
+#  jpa:
+#    database: POSTGRESQL
+#    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#  datasource:
+#    platform: postgres
+#    url: jdbc:postgresql://192.168.0.107:5432/account_service_database
+#    username: postgres
+#    password: root
+#    driver-class-name: org.postgresql.Driver
 spring:
-  jpa:
-    database: POSTGRESQL
-    properties.hibernate.temp.use_jdbc_metadata_defaults: false
-    hibernate:
-      ddl-auto: create
-    properties:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   datasource:
-    platform: postgres
-    url: jdbc:postgresql://localhost:5432/account_service_database
-    username: postgres
-    password: root
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:~/test
+    driverClassName: org.h2.Driver
+#http://localhost:8081/accounts/h2-console/
 
 server:
   servlet:
