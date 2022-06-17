@@ -23,3 +23,19 @@
 		]
 	} 
 #### 
+
+### Using H2 DB in account-service.yaml:
+
+	spring:
+	  h2:
+	    console:
+	      enabled: true
+	      path: /h2-console
+	  datasource:
+	    url: jdbc:h2:~/test
+	    driverClassName: org.h2.Driver
+	#http://localhost:8081/accounts/h2-console/
+
+
+
+
